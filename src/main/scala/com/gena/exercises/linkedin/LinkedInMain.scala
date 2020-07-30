@@ -35,7 +35,8 @@ object LinkedInMain {
     //Option 2
     withSalary
       .filter(_.getAs[Long]("salary") <= 1200)
-      .filter(_.getAs[Seq[String]]("keywords").contains(mostPopular))
+      //.filter(_.getAs[Seq[String]]("keywords").contains(mostPopular))
+      .filter(array_contains(col("keywords"), mostPopular))
       .show()
 
 
