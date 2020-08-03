@@ -1,5 +1,6 @@
 package com.gena.exercises.taxi
 
+import org.apache.spark.rdd.RDD
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -8,7 +9,7 @@ object MainTaxi {
   def main(args: Array[String]): Unit = {
     val processor = new DataProcessor()
     val sc = new SparkContext(master = "local[2]", appName = "hw1")
-    val tripsRdd = sc.textFile("src/main/resources/taxi_orders.txt")
+    val tripsRdd: RDD[String] = sc.textFile("src/main/resources/taxi_orders.txt")
     val driversRdd = sc.textFile("src/main/resources/drivers.txt").map(driver => driver.split(", "))
     val persistedTrips = tripsRdd.map(row => row.split(" ")).persist(StorageLevel.MEMORY_ONLY)
 
