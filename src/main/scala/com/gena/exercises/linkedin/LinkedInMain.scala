@@ -1,6 +1,7 @@
 package com.gena.exercises.linkedin
 
 import org.apache.spark.sql.functions._
+import org.apache.spark.sql.types.DataTypes
 import org.apache.spark.sql.{DataFrame, Row, SparkSession, functions}
 
 
