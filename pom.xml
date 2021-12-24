@@ -27,7 +27,9 @@
         <scala.binary.version>2.11</scala.binary.version>
         <json4s.version>3.6.9</json4s.version>
         <spark.project.version>2.3.1.3.0.1.0-187</spark.project.version>
+
         <log4j.version>2.16.0</log4j.version>
+
     </properties>
 
     <dependencies>
